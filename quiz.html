@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Simple Quiz Whiz</title>
+ <style>
+	body { 
+	font-family: 'Helvetica Neue', Arial, sans-serif; 
+	margin: 0;
+	padding: 20px; 
+	background-color: #e9ecef;
+	color: #333; 
+	display: flex;
+	justify-content: center; 
+	align-items: center; 
+	min-height: 90vh; }
+		
+	.quiz-container { 
+	background-color: #fff; 
+	padding: 30px; 
+	borderradius: 10px; 
+	box-shadow: 0 4px 20px rgba(0,0,0,0.1); 
+	width: 100%; 
+	max-width: 600px; 
+	text-align: center; }
+	
+	h1 { 
+	color: #007bff; 
+	margin-bottom: 25px; }
+	
+	.question-area { 
+	margin-bottom: 20px; 
+	text-align: left; }
+	 
+	#questionText { 
+	font-size: 1.4em; 
+	margin-bottom: 20px; 
+	color: #495057; }
+	
+	.options-list { 
+	list-style-type: none; 
+	padding: 0; 
+	margin: 0; }
+
+	.options-list li { 
+	background-color: #f8f9fa; 
+	border: 1px solid #dee2e6; 
+	padding: 12px 15px; 
+	margin-bottom: 10px; 
+	border-radius: 5px; 
+	cursor: pointer; 
+	transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out; }
+	
+	.options-list li:hover { 
+	background-color: #e2e6ea; 
+	border-color: #adb5bd; }
+	
+	.options-list li.selected { 
+	background-color: #007bff; 
+	color: white; 
+	border-color: #0056b3; }
+	
+	.feedback { 
+	margin-top: 15px; 
+	font-weight:bold; 
+	height: 20px; } 
+	
+	/*For correct/incorrect messages */
+	.correct { 
+	color: #28a745; }
+	
+	.incorrect { 
+	color: #dc3545; }
+	
+	#nextButton { 
+	background-color: #28a745; 
+	color: white; 
+	padding: 12px 25px; 
+	border: none; 
+	border-radius: 5px; 
+	cursor: pointer; 
+	font-size: 1em;
+	margin-top: 20px; 
+	transition: background-color 0.2s; 
+	display: none; 
+	
+	/* Initially hidden */ }
+	#nextButton:hover { 
+	background-color: #218838; }
+	
+	.score-area { 
+	padding: 20px; 
+	background-color: #f1f3f5; 
+	borderradius: 8px; 
+	margin-top: 25px; }
+	
+	#scoreText { 
+	font-size: 1.5em; 
+	font-weight: bold; 
+	color: #17a2b8; }
+
+ </style>
+</head>
+	<body>
+		 <div class="quiz-container">
+			<h1>Quiz Whiz Challenge!</h1>
+			<div class="question-area">
+				<p id="questionText">Loading question...</p>
+				<ul id="optionsList" class="options-list"></ul>
+			</div>
+			 
+			<div id="feedbackArea" class="feedback"></div>
+				<button id="nextBtn">Next Question</button> <div id="scoreArea" class="score-area" style="display: none;">
+				<h2>Your Score:</h2>
+				<p id="scoreText">0 / 0</p>
+			</div>
+		 </div>
+	 <script src="quiz.js"></script>
+	</body>
+</html>
